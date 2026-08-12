@@ -477,6 +477,7 @@ def _construct_timeseries_site(system_dat, resource_dat, hub_heights, x_position
             TI = np.array(wind_resource["turbulence_intensity"]["data"])[cases_idx]
             if heights:
                 TI = interp1d(heights, TI, axis=1)(hh)
+        site.ds["TI"] = (("time",), TI)
 
     return {
         "site": site,
