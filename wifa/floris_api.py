@@ -90,6 +90,8 @@ def run_floris(yaml_input):
         if "flow_field" in out_specs:
             _read_fields(fmodel, output_dir, out_specs, slice_selection)
 
+    return fmodel
+
 
 def _read_turbines(fmodel: "FlorisModel", output_dir, out_specs, slice_selection):
     """
