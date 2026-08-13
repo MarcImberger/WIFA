@@ -707,8 +707,8 @@ def _configure_deficit_model(
         if "k_b" in wake_expansion:
             k_a = wake_expansion.get("k_a", 0)
             k_b = wake_expansion["k_b"]
-            deficit_args["a"] = [k_a, k_b]
-
+            deficit_args["a"] = [k_b, k_a] 
+            
     elif model_name.lower() == "bastankhah2014":
         wake_model_class = BastankhahGaussianDeficit
         wake_expansion = analysis.get("wind_deficit_model", {}).get(
