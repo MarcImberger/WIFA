@@ -632,7 +632,7 @@ def configure_wake_model(system_dat, rotor_diameter, hub_height):
 
     # Configure wind deficit model
     deficit_args = {
-        "use_effective_ws": wind_deficit_data.get("use_effective_ws", True)
+        "use_effective_ws": analysis["wind_deficit_model"].get("use_effective_ws", True)
     }
     wake_deficit_key = None
 
