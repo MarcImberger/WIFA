@@ -631,7 +631,9 @@ def configure_wake_model(system_dat, rotor_diameter, hub_height):
     blockage_data = get_with_default(analysis, "blockage_model", DEFAULTS)
 
     # Configure wind deficit model
-    deficit_args = {"use_effective_ws": True}
+    deficit_args = {
+        "use_effective_ws": wind_deficit_data.get("use_effective_ws", True)
+    }
     wake_deficit_key = None
 
     print("Running deficit ", wind_deficit_data)
